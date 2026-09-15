@@ -78,16 +78,13 @@ Standart GoodbyeDPI Türkiye kurulumunda servisi açmak için `service_install_d
 
 1. **Hazır Sürüm İle:**
    - [Releases](../../releases) sayfasından en son derlenmiş paketi indirin ve bir klasöre çıkartın.
-   - Doğrudan `GoodbyeDPI-Manager.exe` dosyasını çalıştırın.
-2. **Kaynak Koddan Klonladıysanız:**
-   - Bu depoyu indirin veya klonlayın.
-   - Klasör içerisindeki `build.cmd` dosyasına çift tıklayın (Windows'un yerel C# derleyicisi saniyeler içinde `GoodbyeDPI-Manager.exe` dosyasını üretecektir).
+   - Doğrudan `build.cmd` dosyasına çirft tıklayıp çalıştırın.
    - Oluşan `GoodbyeDPI-Manager.exe` dosyasını çalıştırın.
-3. Dilerseniz `Masaustune_Kisayol_Olustur.cmd` dosyasına çift tıklayarak masaüstünüze özel ikonlu kısayol ekleyebilirsiniz.
-4. Arayüz açıldığında:
+   - Dilerseniz `Masaustune_Kisayol_Olustur.cmd` dosyasına çift tıklayarak masaüstünüze özel ikonlu kısayol ekleyebilirsiniz.
+2. Arayüz açıldığında:
    - **DPI Korumasını Başlat (Aktif Et)** butonuna tıklayarak servisi kurup başlatabilirsiniz.
    - **Bilgisayar açıldığında otomatik başlat** kutucuğunu işaretleyerek Windows her açıldığında uygulamanın arka planda tepside hazır olmasını sağlayabilirsiniz.
-5. Pencereyi [X] tuşundan kapattığınızda uygulama sistem tepsisinde çalışmaya devam eder.
+3. Pencereyi [X] tuşundan kapattığınızda uygulama sistem tepsisinde çalışmaya devam eder.
 
 ---
 
