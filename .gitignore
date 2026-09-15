@@ -1,0 +1,8 @@
+# Local user settings
+settings.ini
+
+# Build artifacts and temp files
+*.pdb
+*.tmp
+*.log
+.vs/
