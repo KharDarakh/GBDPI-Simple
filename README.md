@@ -2,7 +2,7 @@
   <img src="assets/icon.jpg" alt="GBDPI Simple Logo" width="140" style="border-radius: 24px;" />
 </p>
 
-<h1 align="center">GBPI-Simple</h1>
+<h1 align="center">GBDPI-Simple</h1>
 
 <p align="center">
   <b>GoodbyeDPI Türkiye — Modern Sistem Tepsisi (Tray) & Kalıcı Servis Yöneticisi</b><br>
