@@ -32,6 +32,16 @@
 > **İnternet Servis Sağlayıcısı Uyumluluğu (Turkcell Superonline Harici):**
 > Bu konfigürasyon **Turkcell Superonline HARİÇ** tüm servis sağlayıcılar (Türk Telekom, Vodafone, TurkNet, Kablonet, Millenicom, Netspeed vb.) için tasarlanmıştır. Turkcell Superonline kullanıcılarının ağ yapısı ve uyguladığı ek filtrelemeler farklı alternatif parametreler gerektirebilmektedir.
 
+> [!NOTE]
+> **Windows Defender Yanlış Pozitif Uyarısı (Trojan:Win32/Wacatac.B!ml):**
+> Windows Defender, bu uygulamayı `Wacatac.B!ml` olarak algılayabilir. Bu bir **yanlış pozitif (false positive)** tespittir. Sonundaki `!ml` ifadesi bu tespitin Microsoft'un makine öğrenmesi modeli tarafından yapıldığını gösterir. Uygulama Windows servis yönetimi (`sc.exe`), Görev Zamanlayıcısı (`schtasks.exe`) gibi sistem araçlarını çağırdığı ve yönetici hakları istediği için ML modeli bunu şüpheli olarak algılamaktadır. Bu durum GoodbyeDPI'ın kendisi (`goodbyedpi.exe` ve `WinDivert` sürücüleri) için de geçerlidir.
+>
+> **Çözüm:** `C:\GBDPI` (veya dosyaları çıkarttığınız) klasörünü Windows Defender dışlamalarına ekleyin:
+> 1. **Windows Güvenliği** → **Virüs ve Tehdit Koruması** → **Ayarları Yönet** → **Dışlamaları Ekle veya Kaldır**
+> 2. **Klasör dışlaması ekle** → `C:\GBDPI` klasörünü seçin.
+>
+> Tüm kaynak kodu bu depoda açıkça mevcuttur ve incelenebilir: [`GoodbyeDPIManager.cs`](GoodbyeDPIManager.cs)
+
 ---
 
 ## ✨ Neden GBPI-Simple?
@@ -64,10 +74,15 @@ Standart GoodbyeDPI Türkiye kurulumunda servisi açmak için `service_install_d
 
 ---
 
-## 🚀 Kullanım
+## 🚀 Kullanım ve Kurulum
 
-1. Bu depoyu indirin veya klonlayın.
-2. Klasör içerisindeki `GoodbyeDPI-Manager.exe` dosyasını çalıştırın.
+1. **Hazır Sürüm İle:**
+   - [Releases](../../releases) sayfasından en son derlenmiş paketi indirin ve bir klasöre çıkartın.
+   - Doğrudan `GoodbyeDPI-Manager.exe` dosyasını çalıştırın.
+2. **Kaynak Koddan Klonladıysanız:**
+   - Bu depoyu indirin veya klonlayın.
+   - Klasör içerisindeki `build.cmd` dosyasına çift tıklayın (Windows'un yerel C# derleyicisi saniyeler içinde `GoodbyeDPI-Manager.exe` dosyasını üretecektir).
+   - Oluşan `GoodbyeDPI-Manager.exe` dosyasını çalıştırın.
 3. Dilerseniz `Masaustune_Kisayol_Olustur.cmd` dosyasına çift tıklayarak masaüstünüze özel ikonlu kısayol ekleyebilirsiniz.
 4. Arayüz açıldığında:
    - **DPI Korumasını Başlat (Aktif Et)** butonuna tıklayarak servisi kurup başlatabilirsiniz.
@@ -100,7 +115,6 @@ GBPI-Simple/
 │   ├── WinDivert.dll
 │   └── WinDivert64.sys
 │
-├── GoodbyeDPI-Manager.exe                 # Derlenmiş hazır çalıştırılabilir dosya
 ├── GoodbyeDPIManager.cs                   # C# WinForms kaynak kodu
 ├── app.manifest                           # Yönetici yetkisi (requireAdministrator) manifestosu
 ├── app.ico                                # Çoklu çözünürlüklü ana uygulama ikonu

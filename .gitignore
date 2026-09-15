@@ -2,6 +2,7 @@
 settings.ini
 
 # Build artifacts and temp files
+GoodbyeDPI-Manager.exe
 *.pdb
 *.tmp
 *.log
